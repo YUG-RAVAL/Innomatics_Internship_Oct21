@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>URL Shortner</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-light " style="background-color: #bec3cc;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">
+                    URL Shortner
+                  </a>
+                </div>
+              </nav>
+        </div>
+        <center>
+        <form method='post' action="http://127.0.0.1:5000/">
+        <div>
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 " >
+    
+                <div style="background-color: #e3f2fd;">
+                    <ul class="nav nav-tabs nav-fill">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/history">History</a>
+                        </li>
+                        
+                     </ul>
+        
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="form-floating ">                    
+                    <textarea class="form-control" name="in_1" ></textarea>
+                    <label for="in_1">Enter URL here </label>
+                
+                </div>
+                <br>
+                <br>
+                <br>
+
+                <div>
+                    <button type="Submit" class="btn btn-primary me-md-3" value="Compress Url">Submit</button>
+                </div> 
+                <br>
+                <br>
+                <br>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id='surl' name='surl' value="{{ shortenurl }}" aria-label="Shortened URL" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="myFunction()">Copy</button>
+                    <script>
+                      function myFunction() {
+                        var copyText = document.getElementById('surl');
+                        copyText.select();
+                        navigator.clipboard.writeText(copyText.value);
+                        alert("Copied URL : " + copyText.value);
+                      }
+                    </script>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                              
+            </div>
+        </div>
+        </form>
+        </center>
+        <div>
+            <nav class="navbar fixed-bottom navbar-light " style="background-color: #bec3cc;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="https://www.linkedin.com/in/yug-raval-6111a9171/">Made by : Yug</a>
+                </div>
+              </nav>
+        </div>
+        
+    </body>
+</html>
